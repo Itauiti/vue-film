@@ -63,6 +63,8 @@ export default {
 
 .boxshadow {
   &:hover {
+    transform: translate(0, -8px);
+    transition: translate 2s ease-in 3s;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.35);
   }
 }
