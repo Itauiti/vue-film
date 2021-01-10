@@ -4,16 +4,26 @@ export default {
   },
   actions: {
     async fetchPosts(context) {
-      const res = await fetch('https://floating-sierra-20135.herokuapp.com/api/movies');
-      const postsData = await res.json();
-      const posts = postsData.data;
-      context.commit('updatePosts', posts);
+      try {
+        const res = await fetch('https://floating-sierra-20135.herokuapp.com/api/movies');
+        const postsData = await res.json();
+        const posts = postsData.data;
+        context.commit('updatePosts', posts);
+      }
+      catch(err) {
+        console.log('Ошибка', err.message);
+      }
     },
     async fetchPostById(context, id) {
-      const res = await fetch('https://floating-sierra-20135.herokuapp.com/api/movie/' + id);
-      const postsData = await res.json();
-      const posts = postsData.data;
-      context.commit('updatePosts', posts);
+      try {
+        const res = await fetch('https://floating-sierra-20135.herokuapp.com/api/movie/' + id);
+        const postsData = await res.json();
+        const posts = postsData.data;
+        context.commit('updatePosts', posts);
+      }
+      catch(err) {
+        console.log('Ошибка', err.message);
+      }
     }
   },
   mutations: {
@@ -23,7 +33,7 @@ export default {
   },
   getters: {
     allPosts(state) {
-      return state.posts
+      return state.posts;
     },
     sortByYear(state) {
       return state.posts.sort(function(a, b) {
