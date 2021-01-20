@@ -1,0 +1,51 @@
+@import "~@/styles/fonts.scss";
+
+$black: #000;
+$white: #FFF;
+$red: #FA2828;
+$light-red: #FF5252;
+$s-light-gray: #E5E5E5;
+$light-gray: #C4C4C4;
+$gray: #988F8F;
+$dark-gray:#4D4747;
+$s-dark-gray: #363232;
+
+$maxWidth: 1400px;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, p, li, body, ul {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  background-color: $s-dark-gray;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: 400;
+  color: $white;
+  font-family: 'Roboto';
+}
+
+.line {
+  color: $light-gray;
+  height: 1px;
+  margin-top: 20px;
+  margin-bottom: 28px;
+}
+
+.container {
+  max-width: $maxWidth;
+  margin: 0 auto;
+  padding: 40px 20px;
+  position: relative;
+}
+
+
